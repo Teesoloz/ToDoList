@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./styles.css";
+import ToDoItem from "./ToDOItem";
 
 export default function App() {
   const [inputText, setInputText] = useState("");
@@ -26,11 +27,7 @@ export default function App() {
         <button onClick={addItems}>Add</button>
       </div>
       {items.map((item) => {
-        return (
-          <ul>
-            <li>{item}</li>
-          </ul>
-        );
+        return <ToDoItem key={item} text={item} />;
       })}
     </div>
   );
